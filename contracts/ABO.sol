@@ -7,14 +7,19 @@ contract ABO {
         bytes32 bloodPackID;
         uint validTime;
     }
-
+    address owner;
     BloodPack bloodPack;
 
     constructor() public {
+        owner = msg.sender;
         bloodPack.validTime = 1; 
     }
 
-    function setBloodInfo(uint bloodInfo) public {
+    modifier restricted() {
+        if (msg.sender != owner) _;
+    }
+
+    function setBloodInfo(uint bloodInfo) public restricted {
         bloodPack.bloodInfo = bloodInfo;
     }
 
@@ -22,7 +27,7 @@ contract ABO {
         return bloodPack.bloodInfo;
     }
 
-    function setBloodPackID(bytes32 bloodPackID) public {
+    function setBloodPackID(bytes bloodPackID) public restricted{
         bloodPack.bloodPackID = keccak256(bloodPackID);
     }
 
@@ -30,7 +35,7 @@ contract ABO {
         return bloodPack.bloodPackID;
     }
 
-    function setBlood(uint blood) public {
+    function setBlood(uint blood) public restricted {
         if (blood == 0) {
             bloodPack.availBlood[0] = true;
             bloodPack.availBlood[3] = true;
