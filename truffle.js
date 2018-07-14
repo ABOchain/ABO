@@ -15,4 +15,11 @@
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
   // to customize your Truffle configuration!
+  networks: {
+    rinkeby: {
+      host: "211.249.49.170",
+      port: 8545,
+      network_id: "4" // Match any network id
+    }
+  }
 };
