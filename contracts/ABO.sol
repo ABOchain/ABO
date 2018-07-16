@@ -12,7 +12,6 @@ contract ABO {
 
     constructor() public {
         owner = msg.sender;
-        bloodPack.availBlood[1] = true;
         bloodPack.validTime = now; 
     }
 
@@ -28,7 +27,7 @@ contract ABO {
         return bloodPack.bloodPackID;
     }
 
-    function setBloodType(uint bloodType) internal {
+    function setBloodType(uint bloodType) public {
         if ( bloodType == 0 ){
             bloodPack.availBlood[0] = true;
             bloodPack.availBlood[3] = true;

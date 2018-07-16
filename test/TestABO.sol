@@ -5,8 +5,11 @@ import "truffle/Assert.sol";
 import "truffle/DeployedAddresses.sol";
 
 contract TestABO {
-    ABO abo = ABO(0);
+    ABO abo = ABO(DeployedAddresses.ABO());
 
-    
+    function testGetBloodType() public {
+        uint 
+    }
+
 }
 
