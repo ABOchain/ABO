@@ -17,11 +17,11 @@ module.exports = {
   // to customize your Truffle configuration!
   networks: {
     rinkeby: {
-      host: "211.249.49.170",
+      host: "211.249.62.37",
       port: 8545,
       network_id: "4",
-      from: "0x3bc5d7c607434761a95f50fddfeb5f244eb2da8d",
-      gas: 7499999
+      from: "0x5dce3d6ca5c650323aa9d2e627c206df13be1149",
+      gas: 7412340
     }
   }
 };

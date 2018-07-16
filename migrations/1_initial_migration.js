@@ -1,5 +1,5 @@
-var Migrations = artifacts.require("./Migrations.sol");
+var ABO = artifacts.require("./ABO.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(Migrations);
+  deployer.deploy(ABO);
 };
