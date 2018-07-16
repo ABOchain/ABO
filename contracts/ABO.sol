@@ -20,11 +20,11 @@ contract ABO {
         if (msg.sender != owner) _;
     }
 
-    function getBloodInfo() public returns(uint) {
+    function getBloodInfo() public restricted returns(uint) {
         return bloodPack.bloodInfo;
     }
 
-    function getBloodPackID() public returns(bytes32) {
+    function getBloodPackID() public restricted returns(bytes32) {
         return bloodPack.bloodPackID;
     }
 
