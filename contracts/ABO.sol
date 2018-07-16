@@ -20,11 +20,11 @@ contract ABO {
         if (msg.sender != owner) _;
     }
 
-    function getBloodInfo() public returns(uint) {
+    function getBloodInfo() public view returns(uint) {
         return bloodPack.bloodInfo;
     }
 
-    function getBloodPackID() public restricted returns(bytes32) {
+    function getBloodPackID() public view restricted returns(bytes32) {
         return bloodPack.bloodPackID;
     }
 
@@ -47,7 +47,7 @@ contract ABO {
         }
     }
     
-    function getBloodType() public returns(uint) {
+    function getBloodType() public view returns(uint) {
         if ( bloodPack.availBlood[0] && bloodPack.availBlood[1] && bloodPack.availBlood[2] && bloodPack.availBlood[3] ){
             return 2;
         }
