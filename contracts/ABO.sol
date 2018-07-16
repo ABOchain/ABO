@@ -20,7 +20,7 @@ contract ABO {
         if (msg.sender != owner) _;
     }
 
-    function getBloodInfo() public restricted returns(uint) {
+    function getBloodInfo() public returns(uint) {
         return bloodPack.bloodInfo;
     }
 
