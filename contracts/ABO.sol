@@ -19,15 +19,26 @@ contract ABO {
         if (msg.sender != owner) _;
     }
 
+    function setBloodInfo(uint bloodInfo) public restricted {
+        bloodPack.bloodInfo = bloodInfo;
+    }
+
     function getBloodInfo() public view returns(uint) {
+        if (bloodPack.bloodInfo > 1) {
+            return 3;
+        }
         return bloodPack.bloodInfo;
+    }
+
+    function setBloodPackID(string bloodPackID) public restricted {
+        bloodPack.bloodPackID = keccak256(abi.encodePacked(bloodPackID));
     }
 
     function getBloodPackID() public view restricted returns(bytes32) {
         return bloodPack.bloodPackID;
     }
 
-    function setBloodType(uint bloodType) public {
+    function setBloodType(uint bloodType) public restricted {
         if ( bloodType == 0 ){
             bloodPack.availBlood[0] = true;
             bloodPack.availBlood[3] = true;
