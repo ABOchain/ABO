@@ -1,0 +1,33 @@
+{
+  "name": "abo",
+  "version": "1.0.0",
+  "description": "ABO project",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "http": "0.0.0",
+    "path": "^0.12.7",
+    "truffle-contract": "^3.0.6",
+    "web3": "^1.0.0-beta.34"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ABOchain/ABO.git"
+  },
+  "keywords": [
+    "ABO"
+  ],
+  "author": "Cheon Myung Jae",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ABOchain/ABO/issues"
+  },
+  "homepage": "https://github.com/ABOchain/ABO#readme"
+}
