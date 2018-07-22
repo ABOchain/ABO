@@ -26,7 +26,7 @@ contract ABO {
     //     bloodDoc.bloodDocID = bloodDocID;
     // }
 
-    function getBloodDocID() public view restricted returns(string) {
+    function getBloodDocID() public view returns(string) {
         return bloodDoc.bloodDocID;
     }
 

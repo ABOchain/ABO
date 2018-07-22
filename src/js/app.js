@@ -23,37 +23,55 @@ aboContract.setProvider(web3.currentProvider);
 app.post("/create/bloodDoc", function (req, res, next){
     var reqData = req.body;
     var fromAddr = reqData.fromAddress;
-    var bloodDocID = reqData.bloodDocID;
-    var bloodingType = reqData.bloodingType;
-    var bloodAmount = reqData.bloodAmount;
-    
-    try {
-        aboContract.new(bloodDocID, bloodingType, bloodAmount, {from : fromAddr, gas : 7412340}).then(async function (abo){
-            var address = abo.address;
-            var txHash = abo.transactionHash;
+    var bloodDocID = new String(reqData.bloodDocID);
+    var bloodingType = parseInt(reqData.bloodingType);
+    var bloodAmount = parseInt(reqData.bloodAmount);
 
-            res.status(200).send({ address, txHash });
-        });
-    }
-    catch (error) {
-        res.status(503).send("this is post error");
-    }
+    aboContract.new(bloodDocID, bloodingType, bloodAmount, {from : fromAddr, gas : 7412340}).then(function (abo){
+        var contactAddress = abo.address;
+        var txHash = abo.transactionHash;
+
+        res.status(200).send({ contactAddress, txHash });
+    });
 });
 
-app.get("/select/myBloodDoc", function (req, res, next){
+app.get("/doc/bloodDocID", function (req, res, next){
     var fromAddr = req.query.fromAddr;
 
-    try {
-        aboContract.at(fromAddr).then(function (abo){
-            var bloodDocID = abo.getBloodDocID();
-            var bloodingType = abo.getBloodingType();
-            var bloodAmount = abo.getBloodAmount();
-            var regDate = abo.getRegDate();
+    aboContract.at(fromAddr).then(function (abo){
+        abo.getBloodDocID.call().then( function (value){
 
-            res.status(200).send({ bloodDocID, bloodingType, bloodAmount, regDate });
+            res.status(200).send({bloodDocID : value});
         });
-    }
-    catch( error ) {
-        res.status(505).send("this is get error")
-    }
+    });
+});
+
+app.get("/doc/bloodingType", function (req, res, next){
+    var fromAddr = req.query.fromAddr;
+
+    aboContract.at(fromAddr).then(function (abo){
+        abo.getBloodingType.call().then( function (value){
+            res.status(200).send({bloodingType : value});
+        });
+    });
+});
+
+app.get("/doc/bloodAmount", function (req, res, next){
+    var fromAddr = req.query.fromAddr;
+
+    aboContract.at(fromAddr).then(function (abo){
+        abo.getBloodAmount.call().then( function (value){
+            res.status(200).send({bloodAmount : value});
+        });
+    });
+});
+
+app.get("/doc/regDate", function (req, res, next){
+    var fromAddr = req.query.fromAddr;
+
+    aboContract.at(fromAddr).then(function (abo){
+        abo.getRegDate.call().then( function (value){
+            res.status(200).send({regDate : value});
+        });
+    });
 });
