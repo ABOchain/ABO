@@ -7,27 +7,28 @@ import "truffle/DeployedAddresses.sol";
 contract TestABO {
     ABO abo = ABO(DeployedAddresses.ABO());
 
-    // function testBloodType() public {
-    //     uint bloodType = 1;
-    //     abo.setBloodType(bloodType);
-    //     uint retBloodType = abo.getBloodType();
+    function testBloodType() public {
+        uint bloodType = 1;
+        abo.setBloodingType(bloodType);
+        uint retBloodType = abo.getBloodingType();
 
-    //     Assert.equal(bloodType, retBloodType, "bloodType get,set ok");
-    // }
+        Assert.equal(bloodType, retBloodType, "bloodType get,set ok");
+    }
 
-    // function testBloodPackID() public {
-    //     abo.setBloodPackID("test1234");
-    //     bytes32 retBloodPackID = abo.getBloodPackID();
+    function testBloodDocID() public {
+        string bloodDocID = "18-07-000001";
+        abo.setBloodDocID(bloodDoc);
+        string retBloodDocID = abo.getBloodPackID();
 
-    //     Assert.equal(keccak256(abi.encodePacked("test1234")), retBloodPackID, "bloodPackID get,set ok"); 
-    // } 
+        Assert.equal(bloodDocID, retBloodDocID, "bloodPackID get,set ok"); 
+    } 
 
-    // function testBloodInfo() public {
-    //     uint bloodInfo = 0;
-    //     abo.setBloodInfo(bloodInfo);
-    //     uint retBloodInfo = abo.getBloodInfo();
+    function testBloodAmount() public {
+        uint bloodAmount = 400;
+        abo.setBloodAmount(bloodAmount);
+        uint retBloodAmount = abo.getBloodAmount();
 
-    //     Assert.equal(bloodInfo, retBloodInfo, "bloodInfo get,set ok");
-    // }
+        Assert.equal(bloodAmount, retBloodAmount, "bloodInfo get,set ok");
+    }
 }
 

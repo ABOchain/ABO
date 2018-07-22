@@ -13,30 +13,47 @@ var server = Http.createServer(app);
 server.listen(8080);
 
 app.use(BodyParser.json())
-var provider = new Web3(new Web3.providers.HttpProvider("http://211.249.62.37:8545"));
+var web3 = new Web3(new Web3.providers.HttpProvider("http://211.249.62.37:8545"));
 
 var aboContract = Contract(contractJson);
-aboContract.setProvider(provider.currentProvider);
+aboContract.setProvider(web3.currentProvider);
+
+
 
 app.post("/create/bloodDoc", function (req, res, next){
     var reqData = req.body;
     var fromAddr = reqData.fromAddress;
     var bloodDocID = reqData.bloodDocID;
-    var bloodType = reqData.bloodType;
+    var bloodingType = reqData.bloodingType;
     var bloodAmount = reqData.bloodAmount;
     
-    aboContract.at(fromAddr).then(function (abo){
-        res.status(200).send("create complete");
-    })
-    //     var abo = instance;
-    //     abo.setBloodDocID(bloodDocID);
-    //     abo.setBloodType(bloodType);
-    //     abo.setBloodAmount(bloodAmount);
-    // })
+    try {
+        aboContract.new(bloodDocID, bloodingType, bloodAmount, {from : fromAddr, gas : 7412340}).then(async function (abo){
+            var address = abo.address;
+            var txHash = abo.transactionHash;
 
-    // res.status(200).send("create complete");
+            res.status(200).send({ address, txHash });
+        });
+    }
+    catch (error) {
+        res.status(503).send("this is post error");
+    }
 });
 
-app.get("/select/myDoc", function (req, res, next){
-    res.status(200).send({ data: "This is select"});
+app.get("/select/myBloodDoc", function (req, res, next){
+    var fromAddr = req.query.fromAddr;
+
+    try {
+        aboContract.at(fromAddr).then(function (abo){
+            var bloodDocID = abo.getBloodDocID();
+            var bloodingType = abo.getBloodingType();
+            var bloodAmount = abo.getBloodAmount();
+            var regDate = abo.getRegDate();
+
+            res.status(200).send({ bloodDocID, bloodingType, bloodAmount, regDate });
+        });
+    }
+    catch( error ) {
+        res.status(505).send("this is get error")
+    }
 });

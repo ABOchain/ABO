@@ -10,8 +10,11 @@ contract ABO {
     address owner;
     BloodDoc bloodDoc;
 
-    constructor() public {
+    constructor(string bloodDocID, uint bloodingType, uint bloodAmount) public {
         owner = msg.sender;
+        bloodDoc.bloodDocID = bloodDocID;
+        bloodDoc.bloodingType = bloodingType;
+        bloodDoc.bloodAmount = bloodAmount;
         bloodDoc.regDate = now; 
     }
 
@@ -19,25 +22,25 @@ contract ABO {
         if (msg.sender != owner) _;
     }
 
-    function setBloodDocID(string bloodDocID) public restricted {
-        bloodDoc.bloodDocID = bloodDocID;
-    }
+    // function setBloodDocID(string bloodDocID) public restricted {
+    //     bloodDoc.bloodDocID = bloodDocID;
+    // }
 
     function getBloodDocID() public view restricted returns(string) {
         return bloodDoc.bloodDocID;
     }
 
-    function setBloodingType(uint bloodingType) public restricted {
-        bloodDoc.bloodingType = bloodingType;
-    }
+    // function setBloodingType(uint bloodingType) public restricted {
+    //     bloodDoc.bloodingType = bloodingType;
+    // }
     
     function getBloodingType() public view returns(uint) {
         return bloodDoc.bloodingType;
     }
 
-    function setBloodAmount(uint bloodAmount) public restricted {
-        bloodDoc.bloodAmount = bloodAmount;
-    }
+    // function setBloodAmount(uint bloodAmount) public restricted {
+    //     bloodDoc.bloodAmount = bloodAmount;
+    // }
 
     function getBloodAmount() public view returns(uint) {
         return bloodDoc.bloodAmount;
