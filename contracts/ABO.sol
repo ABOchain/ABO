@@ -5,48 +5,31 @@ contract ABO {
         string bloodDocID;
         uint bloodingType;
         uint bloodAmount;
-        uint regDate;
+        uint regTime;
     }
-    address owner;
+
     BloodDoc bloodDoc;
 
-    constructor(string bloodDocID, uint bloodingType, uint bloodAmount) public {
-        owner = msg.sender;
+    constructor(string bloodDocID, uint bloodingType, uint bloodAmount, uint regTime) public {
         bloodDoc.bloodDocID = bloodDocID;
         bloodDoc.bloodingType = bloodingType;
         bloodDoc.bloodAmount = bloodAmount;
-        bloodDoc.regDate = now; 
+        bloodDoc.regTime = regTime; 
     }
-
-    modifier restricted() {
-        if (msg.sender != owner) _;
-    }
-
-    // function setBloodDocID(string bloodDocID) public restricted {
-    //     bloodDoc.bloodDocID = bloodDocID;
-    // }
 
     function getBloodDocID() public view returns(string) {
         return bloodDoc.bloodDocID;
     }
-
-    // function setBloodingType(uint bloodingType) public restricted {
-    //     bloodDoc.bloodingType = bloodingType;
-    // }
     
     function getBloodingType() public view returns(uint) {
         return bloodDoc.bloodingType;
     }
 
-    // function setBloodAmount(uint bloodAmount) public restricted {
-    //     bloodDoc.bloodAmount = bloodAmount;
-    // }
-
     function getBloodAmount() public view returns(uint) {
         return bloodDoc.bloodAmount;
     }
 
-    function getRegDate() public view returns(uint) {
-        return bloodDoc.regDate;
+    function getRegTime() public view returns(uint) {
+        return bloodDoc.regTime;
     }
 }
