@@ -1,4 +1,5 @@
 module.exports = {
+    OK : 200,
     translateTime : function (now){
         var currentTime = new Date(parseInt(now));
         var year = new String(currentTime.getFullYear());
