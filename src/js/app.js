@@ -5,6 +5,7 @@ var Web3 = require("web3");
 var BodyParser = require("body-parser");
 var Contract = require("truffle-contract");
 var Path = require("path");
+var JWT = require("jsonwebtoken");
 
 // Custom Library
 var Func = require("./func.js");
@@ -36,12 +37,25 @@ app.post("/create/bloodDoc", function (req, res, next){
     var regTime = parseInt(Date.now() || +new Date());
 
     web3.personal.unlockAccount(fromAddr, "qwer1234", 60);
+
     aboContract.new(bloodDocID, bloodingType, bloodAmount, regTime, {from : fromAddr, gas : 7412340}).then(function (abo){
         var contactAddress = abo.address;
         var txHash = abo.transactionHash;
 
-        res.status().send({ contactAddress, txHash });
+        res.status(Func.OK).send({ contactAddress, txHash });
     });
+});
+
+app.post("/create/account", function (req, res, next) {
+    var reqData = req.body;
+    var jwt = reqData.jwt;
+
+    var decodeData = JWT.verify(jwt, Func.secretKey, { algorithm : 'HS256'});
+    var password = decodeData.password;
+
+    var account = web3.personal.newAccount(password);
+    
+    res.status(Func.OK).send({account});
 });
 
 // Get Method
