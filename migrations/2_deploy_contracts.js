@@ -1,5 +1,5 @@
-var ABO = artifacts.require("./ABO.sol");
+var ABOToken = artifacts.require("./ABOToken.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(ABO, "00-00-0000000", 0, 0, 0);
+  deployer.deploy(ABOToken, "0x150e93417cbe71c1692831eb91c77e20e4ba8a4c");
 };

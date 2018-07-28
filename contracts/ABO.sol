@@ -1,5 +1,7 @@
 pragma solidity ^0.4.24;
 
+import "./ABOToken.sol";
+
 contract ABO {
     struct BloodDoc {
         string bloodDocID;
