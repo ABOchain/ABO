@@ -12,8 +12,10 @@
     "http": "0.0.0",
     "jsonwebtoken": "^8.3.0",
     "path": "^0.12.7",
+    "truffle": "^4.1.13",
     "truffle-contract": "^3.0.6",
-    "web3": "^0.20.6"
+    "web3": "^0.20.6",
+    "zeppelin-solidity": "^1.11.0"
   },
   "devDependencies": {},
   "scripts": {
