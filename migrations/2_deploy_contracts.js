@@ -1,6 +1,6 @@
-var Func = require("../src/js/func.js")
+var Static = require("../src/js/static.js")
 var ABOToken = artifacts.require("./ABOToken.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(ABOToken, Func.ORIGIN_ADDR);
+  deployer.deploy(ABOToken, Static.ORIGIN_ADDR);
 };
