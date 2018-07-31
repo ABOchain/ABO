@@ -86,27 +86,34 @@ app.post("/create/sendToken", (req, res, next) => {
         web3.personal.unlockAccount(fromAddr, fromPass, 60);
     }
     catch (error){
-        res.status(Static.AUTH_ERROR).send({msg : "Account Password incorrect"});
+        res.status(Static.ERROR).send({msg : "Account Password incorrect"});
     }
 
-    aboTokenContract.at(Static.TOKEN_ADDR).then( aboToken => {
-        aboToken.approve(fromAddr, value, {from : Static.ORIGIN_ADDR});
-
-        return aboToken;
-    }).then( async aboToken => {
-        aboToken.transferFrom(fromAddr, toAddr, value, {from : Static.ORIGIN_ADDR}).then( result => {
-            res.status(Static.OK).send({txHash : result.tx});
+    
+    aboTokenContract.deployed.then( aboToken => {
+        aboToken.balanceOf.call(fromAddr).then(balance => {
+            try{
+                //res.status(Static.OK).send({balance, value});
+                if (balance < value){
+                    throw new Error("Not enough Token");
+                }
+            }
+            catch (error){
+                res.status(Static.ERROR).send({msg : error.message});
+            }
+            
+            return aboToken;
+        }).then( aboToken => {
+            aboToken.approve(fromAddr, value, {from : Static.ORIGIN_ADDR}).then( result => {
+                return aboToken;
+            }).then( aboToken => {
+                aboToken.transferFrom(fromAddr, toAddr, value, {from : Static.ORIGIN_ADDR}).then( result => {
+                    res.status(Static.OK).send({txHash : result.tx});
+                });
+            });  
         });
-    })
+    });
 });
-
-app.post("/get/jwt", (req, res, next) => {
-    var reqData = req.body;
-
-    var jwt = JWT.sign(reqData, Static.SECRET_KEY, { algorithm : 'HS256'});
-
-    res.status(Static.OK).send(jwt);
-}); 
 
 // Get Method
 app.get("/get/bloodDoc", (req, res, next) => {
@@ -141,8 +148,8 @@ app.get("/get/bloodDoc", (req, res, next) => {
 
 app.get("/get/balance", (req, res, next) => {
     var addr = req.query.addr;
-
-    aboTokenContract.at(Static.TOKEN_ADDR).then( aboToken => {
+    
+    aboTokenContract.deployed().then( aboToken => {
         aboToken.balanceOf(addr).then( balance => {
             res.status(Static.OK).send({balance : balance.toString(10)});
         });
