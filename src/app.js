@@ -36,7 +36,6 @@ server.listen(8080);
 // Post Method
 app.post("/create/bloodDoc", async (req, res, next) => {
     var reqData = req.body;
-    var addr = reqData.address;
     var bloodDocID = new String(reqData.bloodDocID);
     var bloodingType = parseInt(reqData.bloodingType);
     var bloodAmount = parseInt(reqData.bloodAmount);
@@ -44,10 +43,6 @@ app.post("/create/bloodDoc", async (req, res, next) => {
     var value = 1;
 
     web3.personal.unlockAccount(Static.ORIGIN_ADDR, Static.ORIGIN_ADDR_PASS, 60);
-
-    await aboTokenContract.at(Static.TOKEN_ADDR).then( aboToken => {
-        aboToken.transfer(addr, value, {from : Static.ORIGIN_ADDR});
-    });
 
     await aboContract.new(bloodDocID, bloodingType, bloodAmount, regTime, {from : Static.ORIGIN_ADDR, gas : 7412340}).then( abo => {
         var contactAddress = abo.address;
@@ -69,6 +64,31 @@ app.post("/create/account", async (req, res, next) => {
     res.status(Static.OK).send({account});
 });
 
+app.post("/create/initToken", (req, res, next) => {
+    var reqData = req.body;
+    var jwt = reqData.jwt;
+
+    var decodeData = JWT.verify(jwt, Static.SECRET_KEY, { algorithm : 'HS256'});
+    var addr = decodeData.address;
+    var password = decode.password;
+    var value = 1;
+    
+    web3.personal.unlockAccount(Static.ORIGIN_ADDR, Static.ORIGIN_ADDR_PASS, 60);
+
+    try{
+        web3.unlockAccount(addr, password, 1);
+    }
+    catch (error){
+        res.status(Static.ERROR).send({msg : "Account Password incorrect"});
+    }
+
+    aboTokenContract.deployed().then( aboToken => {
+        aboToken.transfer(addr, value, {from : Static.ORIGIN_ADDR}).then( result => {
+            res.status(Static.OK).send({txHash : result.tx});
+        })
+    })
+});
+
 app.post("/create/sendToken", (req, res, next) => {
     var reqData = req.body;
     var jwt = reqData.jwt;
@@ -83,7 +103,7 @@ app.post("/create/sendToken", (req, res, next) => {
     web3.personal.unlockAccount(Static.ORIGIN_ADDR, Static.ORIGIN_ADDR_PASS, 60);
 
     try {
-        web3.personal.unlockAccount(fromAddr, fromPass, 60);
+        web3.personal.unlockAccount(fromAddr, fromPass, 1);
     }
     catch (error){
         res.status(Static.ERROR).send({msg : "Account Password incorrect"});
@@ -93,7 +113,6 @@ app.post("/create/sendToken", (req, res, next) => {
     aboTokenContract.deployed.then( aboToken => {
         aboToken.balanceOf.call(fromAddr).then(balance => {
             try{
-                //res.status(Static.OK).send({balance, value});
                 if (balance < value){
                     throw new Error("Not enough Token");
                 }
