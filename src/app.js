@@ -68,7 +68,13 @@ app.post("/create/initToken", (req, res, next) => {
     var reqData = req.body;
     var jwt = reqData.jwt;
 
-    var decodeData = JWT.verify(jwt, Static.SECRET_KEY, { algorithm : 'HS256'});
+    try{
+        var decodeData = JWT.verify(jwt, Static.SECRET_KEY, { algorithm : 'HS256'});
+    }
+    catch (error){
+        res.status(Static.ERROR).send({msg : error.message});
+        return ;
+    }
     var addr = decodeData.address;
     var password = decode.password;
     var value = 1;
@@ -80,6 +86,7 @@ app.post("/create/initToken", (req, res, next) => {
     }
     catch (error){
         res.status(Static.ERROR).send({msg : "Account Password incorrect"});
+        return ;
     }
 
     aboTokenContract.deployed().then( aboToken => {
@@ -93,8 +100,14 @@ app.post("/create/sendToken", (req, res, next) => {
     var reqData = req.body;
     var jwt = reqData.jwt;
 
-    var decodeData = JWT.verify(jwt, Static.SECRET_KEY, { algorithm : 'HS256'});
-    
+    try{
+        var decodeData = JWT.verify(jwt, Static.SECRET_KEY, { algorithm : 'HS256'});
+    }
+    catch (error){
+        res.status(Static.ERROR).send({msg : error.message});
+        return ;
+    }
+
     var fromPass = decodeData.password;
     var fromAddr = decodeData.fromAddr;
     var toAddr = decodeData.toAddr;
@@ -107,6 +120,7 @@ app.post("/create/sendToken", (req, res, next) => {
     }
     catch (error){
         res.status(Static.ERROR).send({msg : "Account Password incorrect"});
+        return ;
     }
 
     
@@ -119,6 +133,7 @@ app.post("/create/sendToken", (req, res, next) => {
             }
             catch (error){
                 res.status(Static.ERROR).send({msg : error.message});
+                return ;
             }
             
             return aboToken;
