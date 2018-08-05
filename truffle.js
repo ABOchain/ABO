@@ -24,7 +24,7 @@ module.exports = {
       gas: 7412340
     },
     abo: {
-      host: "localhost",
+      host: "211.249.62.37",
       port: 8545,
       network_id: "116",
       from: "0xc89842ab97cb9028328be4a94b34327540c4f148",

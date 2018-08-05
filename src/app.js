@@ -16,7 +16,7 @@ var Static = require("./js/static.js");
 var aboJson = require(Path.join(__dirname, '../build/contracts/ABO.json'));
 var aboTokenJson = require(Path.join(__dirname, '../build/contracts/ABOToken.json'));
 
-var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+var web3 = new Web3(new Web3.providers.HttpProvider("http://211.249.62.37:8545"));
 
 var aboContract = Contract(aboJson);
 var aboTokenContract = Contract(aboTokenJson);
