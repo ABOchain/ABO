@@ -1,7 +1,7 @@
 # ABO Project.
 
 ## Core Library
----
+
 ###### Truffle
 Version 4.1.13
 
@@ -15,7 +15,7 @@ Version 1.8.13
 Version 10.6.0
 
 ## Nodejs Library
----
+
 ###### Web3.js
 Version 0.20.6
 
