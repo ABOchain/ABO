@@ -1,4 +1,5 @@
-var Config = require("config");
+var Path = require("path");
+var Config = require(Path.join(__dirname, 'config'));;
 
 module.exports = {
     GETH_SERVER_ADDRESS : "http://" + Config.get("geth").server_ip + ":" + Config.get("geth").server_port,
