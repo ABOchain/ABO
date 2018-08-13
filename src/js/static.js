@@ -1,5 +1,3 @@
-var Config = require("./config.js");
-
 module.exports = {
     GETH_SERVER_ADDRESS : "http://localhost:8545",
     ORIGIN_ADDR : "ether address",
