@@ -19,14 +19,6 @@ contract ABO {
         bloodDoc.regTime = regTime; 
     }
 
-    constructor(string bloodDocID, uint bloodingType, uint bloodAmount, uint regTime) public {
-        bloodDoc.bloodAgency = "null";
-        bloodDoc.bloodDocID = bloodDocID;
-        bloodDoc.bloodingType = bloodingType;
-        bloodDoc.bloodAmount = bloodAmount;
-        bloodDoc.regTime = regTime; 
-    }
-
     function getBloodAgency() public view returns(string) {
         return bloodDoc.bloodAgency;
     }
