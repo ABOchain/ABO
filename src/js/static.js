@@ -1,4 +1,4 @@
-var Config = require("../../config.js");
+var Config = require("./config.js");
 
 module.exports = {
     GETH_SERVER_ADDRESS : "http://" + Config.geth.server_ip + ":" + Config.geth.server_port,
