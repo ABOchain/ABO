@@ -33,3 +33,6 @@ Version 0.12.7
 
 ###### Jsonwebtoken
 Version 8.3.0
+
+###### Config
+Version 2.0.1
