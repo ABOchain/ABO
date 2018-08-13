@@ -1,6 +1,6 @@
-var Static = require("../src/js/static.js")
+var Config = require("config");
 var ABOToken = artifacts.require("./ABOToken.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(ABOToken, Static.ORIGIN_ADDR);
+  deployer.deploy(ABOToken, Config.get("geth").origin_addr);
 };
