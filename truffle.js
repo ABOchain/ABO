@@ -12,21 +12,16 @@
  *   },
  */
 
+var config = require("src/config.js");
+
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
   // to customize your Truffle configuration!
   networks: {
-    rinkeby: {
-      host: "211.249.62.37",
-      port: 8545,
-      network_id: "4",
-      from: "0x5dce3d6ca5c650323aa9d2e627c206df13be1149",
-      gas: 7412340
-    },
     abo: {
-      host: "localhost",
-      port: 8545,
-      network_id: "116",
+      host: config.GETH_SERVER_ADDRESS,
+      port: config.GETH_SERVER_PORT,
+      network_id: config.GETH.NETWORK_ID,
       from: "0xc89842ab97cb9028328be4a94b34327540c4f148",
       gas: 7412340
     }
