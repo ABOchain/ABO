@@ -19,10 +19,10 @@ module.exports = {
   // to customize your Truffle configuration!
   networks: {
     abo: {
-      host: config.GETH_SERVER_ADDRESS,
-      port: config.GETH_SERVER_PORT,
+      host: config.GETH.SERVER_ADDRESS,
+      port: config.GETH.SERVER_PORT,
       network_id: config.GETH.NETWORK_ID,
-      from: "0xc89842ab97cb9028328be4a94b34327540c4f148",
+      from: config.GETH.ORIGIN_ADDRESS,
       gas: 7412340
     }
   }
