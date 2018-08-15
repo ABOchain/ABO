@@ -79,18 +79,9 @@ app.post("/create/initToken", (req, res, next) => {
         return ;
     }
     var addr = decodeData.address;
-    var password = decode.password;
     var value = 1;
-    
-    web3.personal.unlockAccount(Static.ORIGIN_ADDR, Static.ORIGIN_ADDR_PASS, 60);
 
-    try{
-        web3.unlockAccount(addr, password, 1);
-    }
-    catch (error){
-        res.status(Static.HTTP_ERROR).send({msg : "Account Password incorrect"});
-        return ;
-    }
+    web3.personal.unlockAccount(Static.ORIGIN_ADDR, Static.ORIGIN_ADDR_PASS, 60);
 
     aboTokenContract.deployed().then( aboToken => {
         aboToken.transfer(addr, value, {from : Static.ORIGIN_ADDR}).then( result => {
@@ -197,9 +188,8 @@ app.get("/get/balance", (req, res, next) => {
     var addr = req.query.addr;
     
     aboTokenContract.deployed().then( aboToken => {
-        aboToken.balanceOf(addr).then( balance => {
+        aboToken.balanceOf.call(addr).then( balance => {
             res.status(Static.HTTP_OK).send({balance : balance.toString(10)});
         });
     });
 });
-
