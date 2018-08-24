@@ -1,4 +1,4 @@
-|PyPI version| |Docs badge| |Build Status|
+|Nodejs version| |Docs badge| |Build Status|
 
 *******
 Ansible
@@ -116,9 +116,9 @@ GNU General Public License v3.0
 
 See `COPYING <COPYING>`_ to see the full text.
 
-.. |PyPI version| image:: https://img.shields.io/pypi/v/ansible.svg
-   :target: https://pypi.org/project/ansible
+.. |Nodejs version| image:: https://img.shields.io/badge/Node.js-v10.6.0-blue.svg
+   :target: https://nodejs.org/dist/v10.7.0/docs/api/
+   |Geth version| image:: https://img.shields.io/badge/geth-v1.8.13-blue.svg
+   :target: https://github.com/ethereum/go-ethereum/wiki/geth
 .. |Docs badge| image:: https://img.shields.io/badge/docs-latest-brightgreen.svg
    :target: https://docs.ansible.com/ansible
-.. |Build Status| image:: https://api.shippable.com/projects/573f79d02a8192902e20e34b/badge?branch=devel
-   :target: https://app.shippable.com/projects/573f79d02a8192902e20e34b
