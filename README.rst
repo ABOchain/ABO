@@ -1,80 +1,22 @@
 |Nodejs version| |Geth version| |Docs badge| 
 
 *******
-Ansible
+ABO Box
 *******
 
-Ansible is a radically simple IT automation system. It handles
-configuration-management, application deployment, cloud provisioning,
-ad-hoc task-execution, and multinode orchestration -- including
-trivializing things like zero-downtime rolling updates with load
-balancers.
+The service name of the electronic blood certificate system is called 'ABO BOX'. 
+The block wallet that stores electronic blood certificates is called a blood donation wallet. 
+Allows service users (donors) to create a blood donation wallet containing the ABO Token and help keep blood donations permanently stored in the blood donation wall.
+In addition, 'ABO BOX' can be used to donate and donate electronic donations to other people's blood donation wallets.
 
-Read the documentation and more at https://ansible.com/
-
-You can find installation instructions
-`here <https://docs.ansible.com/intro_getting_started.html>`_ for a
-variety of platforms.
-
-Most users should probably install a released version of Ansible from ``pip``, a package manager or
-our `release repository <https://releases.ansible.com/ansible/>`_. `Officially supported
-<https://www.ansible.com/ansible-engine>`_ builds of Ansible are also available. Some power users
-run directly from the development branch - while significant efforts are made to ensure that
-``devel`` is reasonably stable, you're more likely to encounter breaking changes when running
-Ansible this way.
+More information at https://abobox.kr
 
 Design Principles
 =================
 
-*  Have a dead simple setup process and a minimal learning curve
-*  Manage machines very quickly and in parallel
-*  Avoid custom-agents and additional open ports, be agentless by
-   leveraging the existing SSH daemon
-*  Describe infrastructure in a language that is both machine and human
-   friendly
-*  Focus on security and easy auditability/review/rewriting of content
-*  Manage new remote machines instantly, without bootstrapping any
-   software
-*  Allow module development in any dynamic language, not just Python
-*  Be usable as non-root
-*  Be the easiest IT automation system to use, ever.
-
-Get Involved
-============
-
-*  Read `Community
-   Information <https://docs.ansible.com/community.html>`_ for all
-   kinds of ways to contribute to and interact with the project,
-   including mailing list information and how to submit bug reports and
-   code to Ansible.
-*  All code submissions are done through pull requests. Take care to
-   make sure no merge commits are in the submission, and use
-   ``git rebase`` vs ``git merge`` for this reason. If submitting a
-   large code change (other than modules), it's probably a good idea to
-   join ansible-devel and talk about what you would like to do or add
-   first to avoid duplicate efforts. This not only helps everyone
-   know what's going on, it also helps save time and effort if we decide
-   some changes are needed.
-*  Users list:
-   `ansible-project <https://groups.google.com/group/ansible-project>`_
-*  Development list:
-   `ansible-devel <https://groups.google.com/group/ansible-devel>`_
-*  Announcement list:
-   `ansible-announce <https://groups.google.com/group/ansible-announce>`_
-   -- read only
-*  irc.freenode.net: #ansible
-
-Branch Info
-===========
-
-*  Releases are named after Led Zeppelin songs. (Releases prior to 2.0
-   were named after Van Halen songs.)
-*  The devel branch corresponds to the release actively under
-   development.
-*  Various release-X.Y branches exist for previous releases.
-*  We'd love to have your contributions, read `Community
-   Information <https://docs.ansible.com/community.html>`_ for notes on
-   how to get started.
+*  Keep blood certificate permanently
+*  Disclosure of transaction details of blood certificate
+*  Prevent the sale of illicit blood certificate
 
 Roadmap
 =======
