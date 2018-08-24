@@ -7,7 +7,6 @@ ABO Box
 `ABO Box <https://abobox.kr>`_ is The service of the electronic blood certificate system.
 
 The block wallet that stores electronic blood certificates is called a blood donation wallet.
-
 Allows service users (donors) to create a blood donation wallet containing the ABO Token and help keep blood donations permanently stored in the blood donation wall.
 
 In addition, 'ABO BOX' can be used to donate and donate electronic donations to other people's blood donation wallets.
