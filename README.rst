@@ -44,9 +44,8 @@ For additional details consult the published `Ansible Roadmap <https://docs.ansi
 Authors
 =======
 
-ABO Box was created by `혈맹`.
+`ABO Box <https://abobox.kr>`_ was created by `혈맹`.
 
-`ABO Box <https://abobox.kr>`
 
 .. |Nodejs version| image:: https://img.shields.io/badge/Node.js-v10.6.0-blue.svg
    :target: https://nodejs.org/dist/v10.7.0/docs/api/
