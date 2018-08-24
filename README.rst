@@ -44,19 +44,9 @@ For additional details consult the published `Ansible Roadmap <https://docs.ansi
 Authors
 =======
 
-Ansible was created by `Michael DeHaan <https://github.com/mpdehaan>`_
-(michael.dehaan/gmail/com) and has contributions from over 3700 users
-(and growing). Thanks everyone!
+ABO Box was created by `혈맹`.
 
-`Ansible <https://www.ansible.com>`_ is sponsored by `Red Hat, Inc.
-<https://www.redhat.com>`_
-
-License
-=======
-
-GNU General Public License v3.0
-
-See `COPYING <COPYING>`_ to see the full text.
+`ABO Box <https://abobox.kr>`
 
 .. |Nodejs version| image:: https://img.shields.io/badge/Node.js-v10.6.0-blue.svg
    :target: https://nodejs.org/dist/v10.7.0/docs/api/
