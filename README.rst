@@ -1,4 +1,4 @@
-|Nodejs version| |Docs badge| |Build Status|
+|Nodejs version| |Geth version| |Docs badge| 
 
 *******
 Ansible
@@ -118,7 +118,7 @@ See `COPYING <COPYING>`_ to see the full text.
 
 .. |Nodejs version| image:: https://img.shields.io/badge/Node.js-v10.6.0-blue.svg
    :target: https://nodejs.org/dist/v10.7.0/docs/api/
-   |Geth version| image:: https://img.shields.io/badge/geth-v1.8.13-blue.svg
+.. |Geth version| image:: https://img.shields.io/badge/geth-v1.8.13-blue.svg
    :target: https://github.com/ethereum/go-ethereum/wiki/geth
 .. |Docs badge| image:: https://img.shields.io/badge/docs-latest-brightgreen.svg
    :target: https://docs.ansible.com/ansible
