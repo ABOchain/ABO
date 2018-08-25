@@ -21,6 +21,18 @@ Design Principles
 
 *  Prevent the sale of illicit blood certificate
 
+Installation
+=======
+
+*  Require
+
+- `Nodejs v10.6.0 <https://nodejs.org/en/download/releases/>`
+- `Geth v1.8.13 <https://github.com/ethereum/go-ethereum/wiki/geth>`
+
+:: mkdir abobox
+:: cd abobox
+:: git clone https://github.com/ABOchain/ABO.git
+
 Authors
 =======
 
@@ -28,8 +40,7 @@ Authors
 
 
 .. |Nodejs version| image:: https://img.shields.io/badge/Node.js-v10.6.0-blue.svg
-   :target: https://nodejs.org/dist/v10.7.0/docs/api/
+   :target: https://nodejs.org/dist/v10.6.0/docs/api/
 .. |Geth version| image:: https://img.shields.io/badge/geth-v1.8.13-blue.svg
    :target: https://github.com/ethereum/go-ethereum/wiki/geth
 .. |Docs badge| image:: https://img.shields.io/badge/docs-latest-brightgreen.svg
-   :target: https://docs.ansible.com/ansible
