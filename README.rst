@@ -26,12 +26,13 @@ Installation
 
 *  Require
 
-- `Nodejs v10.6.0 <https://nodejs.org/en/download/releases/>`_
-- `Geth v1.8.13 <https://github.com/ethereum/go-ethereum/wiki/geth>`_
+    - `Nodejs v10.6.0 <https://nodejs.org/en/download/releases/>`_
+    - `Geth v1.8.13 <https://github.com/ethereum/go-ethereum/wiki/geth>`_
 
-mkdir abobox::
-::cd abobox
-::git clone https://github.com/ABOchain/ABO.git
+*  Command
+    mkdir abobox
+    cd abobox
+    git clone https://github.com/ABOchain/ABO.git
 
 Authors
 =======
