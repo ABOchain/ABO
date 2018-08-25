@@ -54,6 +54,10 @@ More information at https://abobox.kr
         >
         > __HTTP.PORT__ : HTTP Port of ABO box.  
 
+    * Deploy __ABO Token__
+        > truffle migrate --network abo --reset  
+        >  
+        
     * Start __ABO Box__
         > node src/app.js
 
