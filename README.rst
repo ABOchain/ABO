@@ -30,9 +30,9 @@ Installation
     - `Geth v1.8.13 <https://github.com/ethereum/go-ethereum/wiki/geth>`_
 
 *  Command
-    mkdir abobox
-    cd abobox
-    git clone https://github.com/ABOchain/ABO.git
+        mkdir abobox
+        cd abobox
+        git clone https://github.com/ABOchain/ABO.git
 
 Authors
 =======
