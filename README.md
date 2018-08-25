@@ -12,8 +12,10 @@ The block wallet that stores electronic blood certificates is called a blood don
 Allows service users (donors) to create a blood donation wallet containing the ABO Token and help keep blood donations permanently stored in the blood donation wall.
 In addition, 'ABO BOX' can be used to donate and donate electronic donations to other people's blood donation wallets.
 
-More information at https://abobox.kr
------
+More information at https://abobox.kr  
+
+-----  
+
 ### Design Principles
 
 * Keep blood certificate permanently
@@ -51,7 +53,7 @@ More information at https://abobox.kr
     >  
     >
     > __HTTP.PORT__ : HTTP Port of ABO box.  
-    
+
     * Start __ABO Box__
     > node src/app.js
 
