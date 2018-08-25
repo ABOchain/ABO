@@ -25,15 +25,15 @@ Installation
 =======
 
 * Require
-::
+:
 `Install Node.js(v10.6.0) <https://nodejs.org/en/download/releases/>`_
-`Install Geth(v1.8.13) <https://github.com/ethereum/go-ethereum/wiki/geth>`_ and Running Geth::
+`Install Geth(v1.8.13) <https://github.com/ethereum/go-ethereum/wiki/geth>`_ and Running Geth:  
 
-* Command
+* Command   
     mkdir abobox
 
     cd abobox
-    git clone https://github.com/ABOchain/ABO.git::
+    git clone https://github.com/ABOchain/ABO.git
 
 Authors
 =======
