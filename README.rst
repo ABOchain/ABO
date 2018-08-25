@@ -15,22 +15,22 @@ More information at https://abobox.kr
 Design Principles
 =================
 
-*  Keep blood certificate permanently
+* Keep blood certificate permanently
 
-*  Disclosure of transaction details of blood certificate
+* Disclosure of transaction details of blood certificate
 
-*  Prevent the sale of illicit blood certificate
+* Prevent the sale of illicit blood certificate
 
 Installation
 =======
 
-*  Require
+* Require
 
     `Nodejs v10.6.0 <https://nodejs.org/en/download/releases/>`_
 
     `Geth v1.8.13 <https://github.com/ethereum/go-ethereum/wiki/geth>`_
 
-*  Command
+* Command
     mkdir abobox
 
     cd abobox
