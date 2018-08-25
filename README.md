@@ -32,30 +32,30 @@ More information at https://abobox.kr
 
 * Commands
     * Install source code  
-    > mkdir abobox  
-    > cd abobox  
-    > git clone https://github.com/ABOchain/ABO.git  
+        > mkdir abobox  
+        > cd abobox  
+        > git clone https://github.com/ABOchain/ABO.git  
 
     * Configure __src/config.js__
-    >  
-    > __GETH.SERVER_ADDRESS__ : Server IP address running geth.  
-    >  
-    > __GETH.SERVER_PORT__ : Server Port running geth.  
-    >  
-    > __GETH.NETWORK_ID__ : Network id of geth.  
-    >  
-    > __GETH.ORIGIN_ADDR__ : Etherbase address.  
-    >  
-    > __GETH.ORIGIN_ADDR_PASS__ : Password of etherbase address.  
-    >  
-    >  
-    > __JWT.SECRET_KEY__ : JWT Secret key for encryption.  
-    >  
-    >
-    > __HTTP.PORT__ : HTTP Port of ABO box.  
+        >  
+        > __GETH.SERVER_ADDRESS__ : Server IP address running geth.  
+        >  
+        > __GETH.SERVER_PORT__ : Server Port running geth.  
+        >  
+        > __GETH.NETWORK_ID__ : Network id of geth.  
+        >  
+        > __GETH.ORIGIN_ADDR__ : Etherbase address.  
+        >  
+        > __GETH.ORIGIN_ADDR_PASS__ : Password of etherbase address.  
+        >  
+        >  
+        > __JWT.SECRET_KEY__ : JWT Secret key for encryption.  
+        >  
+        >
+        > __HTTP.PORT__ : HTTP Port of ABO box.  
 
     * Start __ABO Box__
-    > node src/app.js
+        > node src/app.js
 
 ### Authors
 
