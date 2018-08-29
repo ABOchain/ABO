@@ -29,7 +29,7 @@ More information at https://abobox.kr
 * Require  
     * Install [Node.js](https://nodejs.org/en/download/releases/) (v10.6.0)
     * Install [Geth](https://github.com/ethereum/go-ethereum/wiki/geth>) (v1.8.13)
-    * [Other Node.js Packages](https://github.com/ABOchain/abo/node_dependency.md)
+    * [Other Node.js Packages](https://github.com/ABOchain/ABO/blob/master/node_dependency.md)
 
 * Commands
     * Install source code  
